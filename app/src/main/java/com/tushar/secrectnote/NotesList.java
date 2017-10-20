@@ -55,9 +55,7 @@ public class NotesList extends AppCompatActivity {
                 note = adapter.getItem(i);
 
                 Intent intent = new Intent(NotesList.this, UpdateNote.class);
-                intent.putExtra("title", note.getTitle());
-                intent.putExtra("desc", note.getDesc());
-                intent.putExtra("id", note.getId());
+                intent.putExtra("note", note);
                 startActivity(intent);
             }
         });

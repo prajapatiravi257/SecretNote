@@ -55,10 +55,11 @@ public class UpdateNote extends AppCompatActivity {
         desc = (EditText) findViewById(R.id.desc);
         updateNote = (Button) findViewById(R.id.add);
         db = new DataHelper(this);
-        title.setText(getIntent().getStringExtra("title"));
-        desc.setText(getIntent().getStringExtra("desc"));
+        Note note = new Note();
+        note = getIntent().getParcelableExtra("note");
+        title.setText(note.getTitle());
+        desc.setText(note.getDesc());
         header.setText("Update Note");
-        Bundle args = getIntent().getExtras();
 
     }
 
